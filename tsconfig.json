@@ -1,3 +1,21 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "jsx": "preserve",
+    "lib": ["es2021"],
+    "moduleResolution": "nodenext",
+    "module": "NodeNext",
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowArbitraryExtensions": true,
+    "allowImportingTsExtensions": true
+  },
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "ES2020"
+    }
+  }
 }

@@ -1,0 +1,5 @@
+{AppRegistry} from 'react-native';
+App from './src/main.civet';
+{name as appName} from './app.json';
+
+AppRegistry.registerComponent appName, => App
