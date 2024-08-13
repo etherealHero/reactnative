@@ -1,22 +1,9 @@
 React from react
 type { PropsWithChildren } from react
-import {
-  SafeAreaView
-  ScrollView
-  StatusBar
-  StyleSheet
-  Text
-  useColorScheme
-  View
-} from 'react-native'
-
-import {
-  Colors
-  DebugInstructions
-  Header
-  LearnMoreLinks
-  ReloadInstructions
-} from 'react-native/Libraries/NewAppScreen'
+{ SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View} 
+  from 'react-native'
+{ Colors, DebugInstructions, Header, LearnMoreLinks, ReloadInstructions } 
+  from 'react-native/Libraries/NewAppScreen'
 
 SectionProps ::= PropsWithChildren<{title: string}>
 
@@ -30,12 +17,10 @@ Section := ({children, title}: SectionProps): JSX.Element ->
 
 App := (): JSX.Element -> 
   isDarkMode := useColorScheme() === 'dark'
-  backgroundStyle := 
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter
-  <SafeAreaView style=backgroundStyle>
-    <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-      backgroundColor=backgroundStyle.backgroundColor/>
-    <ScrollView contentInsetAdjustmentBehavior="automatic" style=backgroundStyle>
+  style := backgroundColor: isDarkMode ? Colors.darker : Colors.lighter
+  <SafeAreaView {style}>
+    <StatusBar {style.backgroundColor} barStyle={isDarkMode ? 'light-content' : 'dark-content'}/>
+    <ScrollView {style} contentInsetAdjustmentBehavior="automatic">
       <Header />
       <View style={backgroundColor: isDarkMode ? Colors.black : Colors.white}>
         <Section title="👋 Hello from .civet">
